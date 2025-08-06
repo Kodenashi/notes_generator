@@ -4,6 +4,7 @@ function showForm() {
     document.getElementById('note2Form').style.display = type === 'note2' ? 'block' : 'none';
     document.getElementById('output').style.display = 'none';
     document.getElementById('copyBtn').style.display = 'none';
+    document.getElementById('resetBtn').style.display = 'none';
 }
 
 function generateNotes(type) {
@@ -33,6 +34,7 @@ Newfold Email: ${document.getElementById('email2').value}`;
 
     document.getElementById('output').style.display = "block";
     document.getElementById('copyBtn').style.display = "inline-block";
+    document.getElementById('resetBtn').style.display = "inline-block";
     document.getElementById('output').textContent = text;
 }
 
@@ -41,4 +43,21 @@ function copyNotes() {
     navigator.clipboard.writeText(text).then(() => {
         alert("Notes copied to clipboard!");
     });
+}
+
+function resetForm() {
+    // Reset dropdown
+    document.getElementById('noteType').value = "";
+
+    // Hide both forms
+    document.getElementById('note1Form').reset?.();
+    document.getElementById('note2Form').reset?.();
+    document.getElementById('note1Form').style.display = 'none';
+    document.getElementById('note2Form').style.display = 'none';
+
+    // Clear output & hide buttons
+    document.getElementById('output').textContent = '';
+    document.getElementById('output').style.display = 'none';
+    document.getElementById('copyBtn').style.display = 'none';
+    document.getElementById('resetBtn').style.display = 'none';
 }
