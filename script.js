@@ -1,15 +1,13 @@
 function showForm() {
     let type = document.getElementById('noteType').value;
 
-    // Hide all forms first
+    // Hide both forms
     document.getElementById('note1Form').style.display = 'none';
     document.getElementById('note2Form').style.display = 'none';
-    document.getElementById('note3Form').style.display = 'none';
 
     // Show the chosen form
     if (type === 'note1') document.getElementById('note1Form').style.display = 'block';
     if (type === 'note2') document.getElementById('note2Form').style.display = 'block';
-    if (type === 'note3') document.getElementById('note3Form').style.display = 'block';
 
     // Show preview and buttons if a form is selected
     if (type) {
@@ -50,19 +48,6 @@ Did the customer purchase an SSL?: ${document.getElementById('sslPurchase').valu
 Team (PPCC or Other): ${document.getElementById('team').value}
 Newfold Email: ${document.getElementById('email2').value}`;
     }
-    else if (type === 'note3') {
-        text =
-`CID: ${document.getElementById('cid').value}
-CPROD: ${document.getElementById('cprod').value}
-PHONE#: ${document.getElementById('phone').value}
-NAME: ${document.getElementById('name').value}
-AUTHENTICATED (Y/N): ${document.getElementById('authenticated').value}
-DOMAIN: ${document.getElementById('domain').value}
-CONCERN: ${document.getElementById('concern').value}
-ACTION DONE: ${document.getElementById('actionDone').value}
-NEXT ACTION: ${document.getElementById('nextAction').value}
-OSAD (Y/N) REASON: ${document.getElementById('osadReason').value}`;
-    }
 
     document.getElementById('output').textContent = text;
 }
@@ -82,10 +67,8 @@ function resetForm() {
     document.getElementById('noteType').value = "";
     document.getElementById('note1Form').reset?.();
     document.getElementById('note2Form').reset?.();
-    document.getElementById('note3Form').reset?.();
     document.getElementById('note1Form').style.display = 'none';
     document.getElementById('note2Form').style.display = 'none';
-    document.getElementById('note3Form').style.display = 'none';
     document.getElementById('output').style.display = 'none';
     document.getElementById('copyBtn').style.display = 'none';
     document.getElementById('resetBtn').style.display = 'none';
