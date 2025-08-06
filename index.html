@@ -3,11 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <title>Notes Generator</title>
+<link rel="icon" type="image/png" href="https://kodenashi.github.io/notes_generator/assets/favicon.ico">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="container">
+    <!-- Logo Placeholder -->
+    <div style="text-align:center; margin-bottom:15px;">
+        <img src="https://kodenashi.github.io/notes_generator/assets/logo.png" alt="Logo" style="max-width:120px;">
+    </div>
+
     <h2>Notes Generator</h2>
 
     <!-- Note type selector -->
@@ -16,7 +22,6 @@
         <option value="">-- Choose a Note --</option>
         <option value="note1">OSAD</option>
         <option value="note2">Site Launch</option>
-        <option value="note3">Pega Notes</option>
     </select>
 
     <!-- OSAD Form -->
@@ -68,39 +73,6 @@
 
         <label>Newfold Email:</label>
         <input type="email" id="email2" oninput="updatePreview()">
-    </form>
-
-    <!-- Pega Notes Form -->
-    <form id="note3Form" style="display:none;">
-        <label>CID:</label>
-        <input type="text" id="cid" oninput="updatePreview()">
-
-        <label>CPROD:</label>
-        <input type="text" id="cprod" oninput="updatePreview()">
-
-        <label>PHONE#:</label>
-        <input type="text" id="phone" oninput="updatePreview()">
-
-        <label>NAME:</label>
-        <input type="text" id="name" oninput="updatePreview()">
-
-        <label>AUTHENTICATED (Y/N):</label>
-        <input type="text" id="authenticated" oninput="updatePreview()">
-
-        <label>DOMAIN:</label>
-        <input type="text" id="domain" oninput="updatePreview()">
-
-        <label>CONCERN:</label>
-        <textarea id="concern" oninput="updatePreview()"></textarea>
-
-        <label>ACTION DONE:</label>
-        <textarea id="actionDone" oninput="updatePreview()"></textarea>
-
-        <label>NEXT ACTION:</label>
-        <textarea id="nextAction" oninput="updatePreview()"></textarea>
-
-        <label>OSAD (Y/N) REASON:</label>
-        <textarea id="osadReason" oninput="updatePreview()"></textarea>
     </form>
 
     <!-- Preview -->
