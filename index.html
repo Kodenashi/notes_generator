@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Notes Generator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>Notes Generator</h2>
+
+    <!-- Note type selector -->
+    <label for="noteType">Select Note Type:</label>
+    <select id="noteType" onchange="showForm()">
+        <option value="">-- Choose a Note --</option>
+        <option value="note1">OSAD</option>
+        <option value="note2">Site Launch</option>
+    </select>
+
+    <!-- OSAD Form -->
+    <form id="note1Form" style="display:none;">
+        <label>Product affected (Domain | Prod Instance ID):</label>
+        <input type="text" id="product">
+
+        <label>How to Replicate/Reproduce the issue/error:</label>
+        <textarea id="replicate"></textarea>
+
+        <label>Error Message (if there is one):</label>
+        <textarea id="error"></textarea>
+
+        <label>Desired Result:</label>
+        <textarea id="result"></textarea>
+
+        <label>What was done/Troubleshooting done:</label>
+        <textarea id="troubleshooting"></textarea>
+
+        <label>F-Case:</label>
+        <input type="text" id="fcase">
+
+        <label>Additional Notes:</label>
+        <textarea id="notes"></textarea>
+
+        <label>How would the client like to be contacted (email or phone)?</label>
+        <input type="text" id="contact">
+
+        <label>Newfold Email:</label>
+        <input type="email" id="email">
+
+        <button type="button" onclick="generateNotes('note1')">Generate</button>
+    </form>
+
+    <!-- Site Launch Form -->
+    <form id="note2Form" style="display:none;">
+        <label>F-case:</label>
+        <input type="text" id="fcase2">
+
+        <label>The domain name we are launching the website:</label>
+        <input type="text" id="domainLaunch">
+
+        <label>Verified the domain is either registered with us or pointed to us:</label>
+        <input type="text" id="verifiedDomain">
+
+        <label>Did the customer purchase an SSL?</label>
+        <input type="text" id="sslPurchase">
+
+        <label>Team (PPCC or Other):</label>
+        <input type="text" id="team">
+
+        <label>Newfold Email:</label>
+        <input type="email" id="email2">
+
+        <button type="button" onclick="generateNotes('note2')">Generate</button>
+    </form>
+
+    <!-- Output and copy button -->
+    <div id="output" style="display:none;"></div>
+    <button id="copyBtn" style="display:none;" onclick="copyNotes()">Copy to Clipboard</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
