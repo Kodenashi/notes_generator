@@ -16,6 +16,7 @@
         <option value="">-- Choose a Note --</option>
         <option value="note1">OSAD</option>
         <option value="note2">Site Launch</option>
+        <option value="note3">Pega Notes</option>
     </select>
 
     <!-- OSAD Form -->
@@ -46,8 +47,6 @@
 
         <label>Newfold Email:</label>
         <input type="email" id="email">
-
-        <button type="button" onclick="generateNotes('note1')">Generate</button>
     </form>
 
     <!-- Site Launch Form -->
@@ -69,12 +68,42 @@
 
         <label>Newfold Email:</label>
         <input type="email" id="email2">
-
-        <button type="button" onclick="generateNotes('note2')">Generate</button>
     </form>
 
-    <!-- Output and copy/reset buttons -->
-    <div id="output" style="display:none;"></div>
+    <!-- Pega Notes Form -->
+    <form id="note3Form" style="display:none;">
+        <label>CID:</label>
+        <input type="text" id="cid">
+
+        <label>CPROD:</label>
+        <input type="text" id="cprod">
+
+        <label>PHONE#:</label>
+        <input type="text" id="phone">
+
+        <label>NAME:</label>
+        <input type="text" id="name">
+
+        <label>AUTHENTICATED (Y/N):</label>
+        <input type="text" id="authenticated">
+
+        <label>DOMAIN:</label>
+        <input type="text" id="domain">
+
+        <label>CONCERN:</label>
+        <textarea id="concern"></textarea>
+
+        <label>ACTION DONE:</label>
+        <textarea id="actionDone"></textarea>
+
+        <label>NEXT ACTION:</label>
+        <textarea id="nextAction"></textarea>
+
+        <label>OSAD (Y/N) REASON:</label>
+        <textarea id="osadReason"></textarea>
+    </form>
+
+    <!-- Copy/Reset Buttons -->
     <div style="display:flex; gap:10px; margin-top:10px;">
         <button id="copyBtn" style="display:none;" onclick="copyNotes()">Copy to Clipboard</button>
         <button id="resetBtn" style="display:none; background:#dc3545;" onclick="resetForm()">Reset</button>
