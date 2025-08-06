@@ -22,88 +22,91 @@
     <!-- OSAD Form -->
     <form id="note1Form" style="display:none;">
         <label>Product affected (Domain | Prod Instance ID):</label>
-        <input type="text" id="product">
+        <input type="text" id="product" oninput="updatePreview()">
 
         <label>How to Replicate/Reproduce the issue/error:</label>
-        <textarea id="replicate"></textarea>
+        <textarea id="replicate" oninput="updatePreview()"></textarea>
 
         <label>Error Message (if there is one):</label>
-        <textarea id="error"></textarea>
+        <textarea id="error" oninput="updatePreview()"></textarea>
 
         <label>Desired Result:</label>
-        <textarea id="result"></textarea>
+        <textarea id="result" oninput="updatePreview()"></textarea>
 
         <label>What was done/Troubleshooting done:</label>
-        <textarea id="troubleshooting"></textarea>
+        <textarea id="troubleshooting" oninput="updatePreview()"></textarea>
 
         <label>F-Case:</label>
-        <input type="text" id="fcase">
+        <input type="text" id="fcase" oninput="updatePreview()">
 
         <label>Additional Notes:</label>
-        <textarea id="notes"></textarea>
+        <textarea id="notes" oninput="updatePreview()"></textarea>
 
         <label>How would the client like to be contacted (email or phone)?</label>
-        <input type="text" id="contact">
+        <input type="text" id="contact" oninput="updatePreview()">
 
         <label>Newfold Email:</label>
-        <input type="email" id="email">
+        <input type="email" id="email" oninput="updatePreview()">
     </form>
 
     <!-- Site Launch Form -->
     <form id="note2Form" style="display:none;">
         <label>F-case:</label>
-        <input type="text" id="fcase2">
+        <input type="text" id="fcase2" oninput="updatePreview()">
 
         <label>The domain name we are launching the website:</label>
-        <input type="text" id="domainLaunch">
+        <input type="text" id="domainLaunch" oninput="updatePreview()">
 
         <label>Verified the domain is either registered with us or pointed to us:</label>
-        <input type="text" id="verifiedDomain">
+        <input type="text" id="verifiedDomain" oninput="updatePreview()">
 
         <label>Did the customer purchase an SSL?</label>
-        <input type="text" id="sslPurchase">
+        <input type="text" id="sslPurchase" oninput="updatePreview()">
 
         <label>Team (PPCC or Other):</label>
-        <input type="text" id="team">
+        <input type="text" id="team" oninput="updatePreview()">
 
         <label>Newfold Email:</label>
-        <input type="email" id="email2">
+        <input type="email" id="email2" oninput="updatePreview()">
     </form>
 
     <!-- Pega Notes Form -->
     <form id="note3Form" style="display:none;">
         <label>CID:</label>
-        <input type="text" id="cid">
+        <input type="text" id="cid" oninput="updatePreview()">
 
         <label>CPROD:</label>
-        <input type="text" id="cprod">
+        <input type="text" id="cprod" oninput="updatePreview()">
 
         <label>PHONE#:</label>
-        <input type="text" id="phone">
+        <input type="text" id="phone" oninput="updatePreview()">
 
         <label>NAME:</label>
-        <input type="text" id="name">
+        <input type="text" id="name" oninput="updatePreview()">
 
         <label>AUTHENTICATED (Y/N):</label>
-        <input type="text" id="authenticated">
+        <input type="text" id="authenticated" oninput="updatePreview()">
 
         <label>DOMAIN:</label>
-        <input type="text" id="domain">
+        <input type="text" id="domain" oninput="updatePreview()">
 
         <label>CONCERN:</label>
-        <textarea id="concern"></textarea>
+        <textarea id="concern" oninput="updatePreview()"></textarea>
 
         <label>ACTION DONE:</label>
-        <textarea id="actionDone"></textarea>
+        <textarea id="actionDone" oninput="updatePreview()"></textarea>
 
         <label>NEXT ACTION:</label>
-        <textarea id="nextAction"></textarea>
+        <textarea id="nextAction" oninput="updatePreview()"></textarea>
 
         <label>OSAD (Y/N) REASON:</label>
-        <textarea id="osadReason"></textarea>
+        <textarea id="osadReason" oninput="updatePreview()"></textarea>
     </form>
 
-    <!-- Copy/Reset Buttons -->
+    <!-- Preview -->
+    <div id="output" style="display:none;"></div>
+
+    <!-- Buttons -->
     <div style="display:flex; gap:10px; margin-top:10px;">
         <button id="copyBtn" style="display:none;" onclick="copyNotes()">Copy to Clipboard</button>
         <button id="resetBtn" style="display:none; background:#dc3545;" onclick="resetForm()">Reset</button>
