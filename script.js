@@ -11,17 +11,21 @@ function showForm() {
     if (type === 'note2') document.getElementById('note2Form').style.display = 'block';
     if (type === 'note3') document.getElementById('note3Form').style.display = 'block';
 
-    // Show buttons if a form is chosen
+    // Show preview and buttons if a form is selected
     if (type) {
+        document.getElementById('output').style.display = 'block';
         document.getElementById('copyBtn').style.display = 'inline-block';
         document.getElementById('resetBtn').style.display = 'inline-block';
     } else {
+        document.getElementById('output').style.display = 'none';
         document.getElementById('copyBtn').style.display = 'none';
         document.getElementById('resetBtn').style.display = 'none';
     }
+
+    updatePreview();
 }
 
-function copyNotes() {
+function updatePreview() {
     let type = document.getElementById('noteType').value;
     let text = "";
 
@@ -60,12 +64,17 @@ NEXT ACTION: ${document.getElementById('nextAction').value}
 OSAD (Y/N) REASON: ${document.getElementById('osadReason').value}`;
     }
 
+    document.getElementById('output').textContent = text;
+}
+
+function copyNotes() {
+    let text = document.getElementById('output').textContent;
     if (text.trim() !== "") {
         navigator.clipboard.writeText(text).then(() => {
             alert("Notes copied to clipboard!");
         });
     } else {
-        alert("Please fill in the fields before copying.");
+        alert("Please fill in some fields before copying.");
     }
 }
 
@@ -77,6 +86,7 @@ function resetForm() {
     document.getElementById('note1Form').style.display = 'none';
     document.getElementById('note2Form').style.display = 'none';
     document.getElementById('note3Form').style.display = 'none';
+    document.getElementById('output').style.display = 'none';
     document.getElementById('copyBtn').style.display = 'none';
     document.getElementById('resetBtn').style.display = 'none';
 }
